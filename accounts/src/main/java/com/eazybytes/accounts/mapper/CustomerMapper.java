@@ -1,5 +1,6 @@
 package com.eazybytes.accounts.mapper;
 
+import com.eazybytes.accounts.dto.CustomerDetailsDto;
 import com.eazybytes.accounts.dto.CustomerDto;
 import com.eazybytes.accounts.entity.Customer;
 
@@ -17,6 +18,13 @@ public class CustomerMapper {
         customer.setEmail(customerDto.getEmail());
         customer.setMobileNumber(customerDto.getMobileNumber());
         return customer;
+    }
+
+    public static CustomerDetailsDto mapToCustomerDetail(Customer customer, CustomerDetailsDto customerDetailDto) {
+        customerDetailDto.setName(customer.getName());
+        customerDetailDto.setEmail(customer.getEmail());
+        customerDetailDto.setMobileNumber(customer.getMobileNumber());
+        return customerDetailDto;
     }
 
 }
